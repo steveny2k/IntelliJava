@@ -101,7 +101,7 @@ public class CohereModelConnectionTest {
 					.setModel("xlarge").setTemperature(0.7f).setMaxTokens(50).build();
 
 			if (coherKey.isBlank())
-				return;
+				throw new IllegalArgumentException("Missing Cohere API key");
 
 			String resValue = wrapper.generateText(input);
 
